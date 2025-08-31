@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Buat Ichaa 💖</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: 'Poppins', sans-serif;
+      text-align: center;
+      color: #fff;
+    }
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+    }
+    button {
+      padding: 15px 25px;
+      font-size: 1.2em;
+      border: none;
+      border-radius: 25px;
+      background: #ff6b81;
+      color: white;
+      cursor: pointer;
+      transition: 0.3s;
+      z-index: 10;
+    }
+    button:hover {
+      transform: scale(1.1);
+      background: #ff4757;
+    }
+    .heart {
+      position: fixed;
+      top: -10px;
+      font-size: 24px;
+      animation: fall linear forwards;
+      color: #ff3366;
+      pointer-events: none;
+    }
+    @keyframes fall {
+      to {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Hai Ichaa 😘</h1>
+  <p>Aku punya sesuatu spesial buat kamu...</p>
+  <button onclick="tanya()">Klik Aku 💌</button>
+
+  <script>
+    function tanya() {
+      let jawab = confirm("Ichaa mau nggak jadi alasan aku senyum tiap hari? 😍");
+      if (jawab) {
+        alert("Yeeey! Mulai hari ini kamu resmi bikin aku bahagia terus 💖✨");
+      } else {
+        alert("Gapapa, aku tetep nggoda kamu terus kok 🤭💕");
+      }
+    }
+
+    // efek hati jatuh
+    setInterval(() => {
+      const heart = document.createElement("div");
+      heart.className = "heart";
+      heart.innerText = "💖";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDuration = (3 + Math.random() * 2) + "s";
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 5000);
+    }, 500);
+  </script>
+</body>
+</html>
